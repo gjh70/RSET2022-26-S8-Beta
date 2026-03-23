@@ -1,0 +1,136 @@
+import React, { useState, useEffect } from "react";
+import { Plus, Trash2 } from "lucide-react";
+import "./styles.css";
+
+const Whitelist = ({ role }) => {
+  const [packages, setPackages] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [newPackageName, setNewPackageName] = useState("");
+
+  useEffect(() => {
+    const fetchPackages = async () => {
+      try {
+        const response = await fetch("/api/packages");
+        const data = await response.json();
+        setPackages(data);
+      } catch (e) {
+        setError("Server likely not running or CORS issue");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPackages();
+  }, []);
+
+  const handleAddPackage = async (e) => {
+    e.preventDefault();
+
+    // Trim whitespace
+    const trimmedName = newPackageName.trim();
+
+    try {
+      const response = await fetch("/api/packages", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: trimmedName }),
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to add package");
+      }
+
+      setPackages((currentPackages) => [data, ...currentPackages]);
+      setNewPackageName("");
+      setError(null);
+    } catch (err) {
+      window.alert(err.message || "Failed to add package");
+    }
+  };
+
+  const handleDeletePackage = async (packageId) => {
+    if (!window.confirm("Are you sure you want to delete this package?")) {
+      return;
+    }
+    
+    const response = await fetch(`/api/packages/${packageId}`, {
+      method: "DELETE",
+    });
+
+    if (response.status !== 204) { // 204 No Content on success
+      setError("Failed to delete package");
+    }
+
+    setPackages(packages.filter((pkg) => pkg._id !== packageId));
+  };
+
+  return (
+    <div className="whitelist-container">
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+        <div>
+          <h1 className="page-title">Whitelist</h1>
+          <p className="page-subtitle">Packages available for download.</p>
+        </div>
+      </div>
+
+      {role === 'admin' && (
+      <div className="form-card">
+        <h3>Add a new package</h3>
+        <form onSubmit={handleAddPackage} className="add-package-form">
+          <input
+            type="text"
+            value={newPackageName}
+            onChange={(e) => setNewPackageName(e.target.value)}
+            placeholder="Enter package name"
+            className="package-input"
+            required
+          />
+          <button
+            type="submit"
+            className="request-button"
+            disabled={!newPackageName.trim()}
+          >
+            <Plus size={16} />
+            Add
+          </button>
+        </form>
+      </div>
+      )}
+
+      <div className="list-card">
+        {loading && <p className="loading-message">Loading packages...</p>}
+        {error && <p className="error">Error: {error}</p>}
+        {!loading && !error && (
+          <table className="packages-table">
+            <thead>
+              <tr>
+                <th>Package Name</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {packages.map((pkg) => (
+                <tr key={pkg._id}>
+                  <td className="package-name-cell">{pkg.name}</td>
+                  <td className="actions-cell">
+                    {role === 'admin' && (
+                    <button onClick={() => handleDeletePackage(pkg._id)} className="delete-btn">
+                      <Trash2 size={16} />
+                      Delete
+                    </button>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Whitelist;

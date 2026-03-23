@@ -6,6 +6,20 @@ This repository contains all the source code and final reports for the final yea
 
 ## Projects
 
+### Group 2
+
+*Project:* [Corporate Device Control Suite](https://github.com/GeorgeET15/RSET2022-26-S8-Beta/tree/main/Group%202%20Corporate%20Device%20Control%20Suite)
+*Members:*
+
+- Muhammed S. Suhail (U2203144)
+- Deril Jose Thirunilath (U2203076)
+- Juan Jude Pereira (U2203124)
+- Evana Rachel Kurian (U2203091)
+
+*Guide:* Mr. Paul Augustine
+
+---
+
 ### Group 6
 **Project:** [TITAN: Trash Interception and Termination Autonomous Navigator](https://github.com/GeorgeET15/RSET2022-26-S8-Beta/tree/main/TITAN%3A%20Trash%20Interception%20and%20Termination%20Autonomous%20%20Navigator)
 **Members:**
@@ -18,7 +32,7 @@ This repository contains all the source code and final reports for the final yea
 ##
 
 ### Group 7
-**Project:** [SEISMICO: Seismic Monitoring using Distributed Acoustic Sensing](https://github.com/RSET-CSE-DEPARTMENT/RSET2022-26-S8-Beta/tree/2b00c3013b4f4f00d280e11fa0cb52436fc453a2/GROUP-7-Seismic-Monitoring-using-Distributive-Acoustic-Sensing)
+**Project:** [SEISMICO: Seismic Monitoring using Distributed Acoustic Sensing]([GROUP-7-Seismic-Monitoring-using-Distributive-Acoustic-Sensing](https://github.com/RSET-CSE-DEPARTMENT/RSET2022-26-S8-Beta/tree/2b00c3013b4f4f00d280e11fa0cb52436fc453a2/GROUP-7-Seismic-Monitoring-using-Distributive-Acoustic-Sensing))
 **Members:**
 - Jala Vishwa Keerthi (U2203109)
 - Cyriac James Boby (U2203073)
@@ -26,19 +40,7 @@ This repository contains all the source code and final reports for the final yea
 - Johan B. Agustine (U2203119)
 
 **Guide:** Dr. Amitha Mathew
-##
-
-### Group 12
-**Project:** Seizure Localization Using Quantum Algorithms([GROUP-12-Seizure Localization Using Quantum Algorithms](https://github.com/RSET-CSE-DEPARTMENT/RSET2022-26-S8-Beta/tree/main/Seizure%20Localization%20Using%20Quantum%20Algorithms))
-**Members:**
-- Colin Pradeep (U2203072)
-- Franklin Davis Achandy (U2203094)
-- Jose Chemmanoor (U2203122)
-- Joyal George Joseph (U2203123)
-
-**Guide:** Dr. Sminu Izudheen
-
-
+---
 ### Group 15
 **Project:** [Corporate Email Summarization and Task Extraction](https://github.com/RSET-CSE-DEPARTMENT/RSET2022-26-S8-Beta/tree/main/Group%2015%20Corporate%20Email%20Summarization%20and%20Task%20Extraction)
 **Members:**
