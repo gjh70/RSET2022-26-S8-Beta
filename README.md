@@ -26,6 +26,16 @@ This repository contains all the source code and final reports for the final yea
 - Johan B. Agustine (U2203119)
 
 **Guide:** Dr. Amitha Mathew
+
+### Group 12
+**Project:** [Seizure Localization Using Quantum Algorithms]([GROUP-12-Seizure Localization Using Quantum Algorithms](https://github.com/RSET-CSE-DEPARTMENT/RSET2022-26-S8-Beta/tree/main/Seizure%20Localization%20Using%20Quantum%20Algorithms))
+**Members:**
+- Colin Pradeep (U2203072)
+- Franklin Davis Achandy (U2203094)
+- Jose Chemmanoor (U2203122)
+- Joyal George Joseph (U2203123)
+
+**Guide:** Dr. Amitha Mathew
 ---
 ### Group 15
 **Project:** [Corporate Email Summarization and Task Extraction](https://github.com/RSET-CSE-DEPARTMENT/RSET2022-26-S8-Beta/tree/main/Group%2015%20Corporate%20Email%20Summarization%20and%20Task%20Extraction)
